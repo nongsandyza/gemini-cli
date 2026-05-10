@@ -1,135 +1,86 @@
-# 📦 เอกสารส่งมอบโครงการ: Gemini CLI (Thai Edition)
+# 📦 เอกสารส่งมอบโครงการ: Gemini CLI (ฉบับภาษาไทย)
 
-**สถานะโครงการ:** 🟢 พร้อมดำเนินการ / เปิด Pull Request แล้ว  
-**บทบาทผู้จัดทำ:** วิศวกรพรอมต์ระบบ (AI Prompt Engineer)  
-**วันที่ส่งมอบ:** 2026-05-08
+**สถานะโครงการ:** 🟢 พร้อมดำเนินการ / สร้างสาขาและไฟล์แล้ว (สาขา: `translate-readme-thai`)
+
+**บทบาทผู้จัดทำ:** วิศวกรพรอมต์ระบบ (AI Prompt Engineer)
 
 ---
 
 ## 🎯 วัตถุประสงค์หลัก
 
-การปรับปรุงเนื้อหา Gemini CLI เพื่อให้เป็นเครื่องมือที่เข้าถึงง่ายสำหรับนักพัฒนาชาวไทย โดยเน้นความง่ายในการติดตั้ง (Ease of Installation) และความปลอดภัยในการใช้งาน (Security First)
+การแปลและปรับปรุงเอกสาร README เป็นภาษาไทย เพื่อให้ Gemini CLI เข้าถึงได้ง่ายขึ้นสำหรับนักพัฒนาชาวไทย โดยเน้น 2 ประเด็นหลัก:
+
+- Ease of Installation — ทำให้ง่ายต่อการติดตั้งบนแพลตฟอร์มยอดนิยม
+- Security First — แนะนำแนวปฏิบัติการจัดการคีย์และการยืนยันตัวตนอย่างปลอดภัย
+
+## 🛠 ขอบเขตการส่งมอบ
+
+- แปล README.md เป็นภาษาไทยและอัปเดตไฟล์ต้นทางในสาขา `translate-readme-thai`
+- สร้างไฟล์ README_TH.md (เวอร์ชันไทยสำรอง)
+- สร้างไฟล์ DELIVERY.md ที่เป็นเอกสารส่งมอบอย่างเป็นทางการ
+- รักษาลิงก์, ตัวอย่างคำสั่ง, และข้อมูลเชิงเทคนิคไว้เหมือนเดิม
 
 ---
 
-## 🛠 รายละเอียดการปรับปรุงเนื้อหา (Content Strategy)
+## 📋 กลยุทธ์เนื้อหา (Content Strategy)
 
-### 1. ระบบการติดตั้งแบบ Hybrid
-
-เพื่อให้ครอบคลุมทุกกลุ่มผู้ใช้ เราได้แบ่งวิธีการติดตั้งออกเป็น 4 รูปแบบหลัก:
-
-- **npx (Quick Start):** สำหรับการทดสอบทันทีโดยไม่ต้องติดตั้ง Library ถาวร
-- **npm (Global):** สำหรับนักพัฒนาที่ต้องการเรียกใช้เป็นคำสั่งหลักใน Terminal
-- **Homebrew (macOS/Linux):** สำหรับผู้ใช้ที่ชื่นชอบ Package Manager
-- **Windows PowerShell SDK Setup:** แนะนำการตั้งค่าผ่าน PowerShell และ Environment Variables เพื่อประสิทธิภาพสูงสุดบน Windows
-
-### 2. โครงสร้างคำสั่งที่พร้อมใช้งาน (Prompt-Ready)
-
-ออกแบบคำอธิบายให้รองรับการทำงานร่วมกับ AI ได้ทันที เช่น:
-
-- การส่ง Query ผ่าน CLI
-- การจัดการ API Key ผ่านระบบ System Variable (ไม่ Hardcode)
-- การกำหนดค่า Permanent Environment Variables
-
-### 3. การรองรับแบบ Localized
-
-- แปล README.md เป็นภาษาไทยอย่างเต็มที่
-- สร้างไฟล์ README_TH.md เพื่อการเข้าถึงชาวไทยที่ชัดเจน
-- เพิ่มคำแนะนำการติดตั้ง Windows SDK ในไฟล์หลัก
+1. ระบบการติดตั้งแบบ Hybrid: รองรับ `npx`, `npm` (global), Homebrew/MacPorts และคำแนะนำสำหรับ Anaconda
+2. Prompt-Ready: ตัวอย่างคำสั่ง CLI ถูกเขียนให้สามารถนำไปใช้กับการทำงานร่วมกับ AI ได้ทันที
+3. Secure Auth: แนะนำการจัดเก็บคีย์ใน Environment Variables และไม่แนะนำให้ใส่คีย์ในโค้ด
 
 ---
 
-## 📋 คุณสมบัติเด่นที่นำเสนอ
+## 📥 คำแนะนำการติดตั้ง (Windows SDK Style — ตัวอย่าง)
 
-| คุณสมบัติ | คำอธิบาย | ประเทศเป้าหมาย |
-| :--- | :--- | :--- |
-| **🚀 Free Tier Access** | ใช้งาน Gemini API ได้ฟรีภายใต้โควต้าของ Google | Global + Thailand |
-| **📋 Multi-Model Support** | สลับใช้ Gemini 1.5 Pro หรือ Flash ได้ตามความเหมาะสม | Global |
-| **💻 Windows Optimized** | มีคำแนะนำการตั้งค่า SDK เฉพาะสำหรับผู้ใช้ Windows | Windows Users |
-| **🔐 Secure Auth** | รองรับ OAuth + API Key + Vertex AI 3 รูปแบบ | Enterprise |
-| **🇹🇭 Thai Language Support** | เอกสารและคำแนะนำครบครันในภาษาไทย | Thailand |
+1. ตรวจสอบ Node.js:
 
----
-
-## 📥 รายการเปลี่ยนแปลง (Change Log)
-
-### ✅ ไฟล์ที่สร้าง/อัปเดต
-
-1. **README.md** (อัปเดต)
-   - ✅ แปลหัวข้อทั้งหมดเป็นภาษาไทย
-   - ✅ แปลส่วน Features, Installation, Authentication
-   - ✅ แปลเอกสาร Documentation และ Contributing Guide
-   - ✅ เพิ่มส่วน Windows PowerShell SDK Installation Guide
-   - ✅ รักษาลิงก์ทั้งหมดให้สมบูรณ์
-
-2. **README_TH.md** (สร้างใหม่)
-   - ✅ เวอร์ชันไทยแบบเต็มรูปแบบของ README
-   - ✅ เน้น Windows SDK Installation Guide
-   - ✅ เพิ่มคำแนะนำสำหรับผู้ใช้ Windows
-   - ✅ รูปแบบเพื่อการเข้าถึงชุมชนไทย
-
-3. **DELIVERY.md** (สร้างใหม่)
-   - ✅ เอกสารส่งมอบงานอย่างเป็นทางการ
-   - ✅ บันทึก Change Log ครบถ้วน
-   - ✅ บันทึกรายละเอียดทางเทคนิค
-
----
-
-## 🔍 การตรวจสอบคุณภาพ (QA Checklist)
-
-- ✅ ตรวจสอบ Markdown Syntax ทั้งหมด
-- ✅ ตรวจสอบความถูกต้องของลิงก์ทั้งหมด
-- ✅ ตรวจสอบการแปลภาษาไทย (ถูกต้อง ชัดเจน)
-- ✅ ตรวจสอบคำสั่ง bash/powershell (ถูกต้อง)
-- ✅ ตรวจสอบ Badge และรูปภาพ (ยังคงอยู่)
-- ✅ ตรวจสอบการจัดระเบียบข้อมูล (เรียบร้อย)
-
----
-
-## 📚 ไฟล์อ้างอิง
-
-```
-nongsandyza/gemini-cli/
-├── README.md (อัปเดต - ภาษาไทย + Windows SDK)
-├── README_TH.md (สร้างใหม่ - เวอร์ชันไทยแบบเต็ม)
-├── DELIVERY.md (สร้างใหม่ - เอกสารส่งมอบ)
-└── [branch: translate-readme-thai]
+```powershell
+node -v
 ```
 
----
+2. ติดตั้งแบบ global ด้วย npm:
 
-## 🤝 ขั้นตอนการส่งมอบ (Pull Request Guidelines)
+```powershell
+npm install -g @google/gemini-cli
+```
 
-| ขั้นตอน | รายละเอียด | สถานะ |
-| :--- | :--- | :--- |
-| **Branch** | `translate-readme-thai` → `main` | ✅ |
-| **Commit Message** | `docs: update Thai README, add Windows SDK guide & DELIVERY doc` | ✅ |
-| **Validation** | ตรวจสอบ Markdown Syntax & Links | ✅ |
-| **PR Title** | `docs: Thai localization + Windows SDK installation guide` | ✅ |
-| **PR Description** | วัตถุประสงค์ + Change Log | ✅ |
-| **Ready to Merge** | รอการ Review จากทีม | ⏳ |
+3. ตั้งค่า API Key (ตัวอย่าง — ตั้งเป็น Environment Variable ของผู้ใช้):
 
----
+```powershell
+[System.Environment]::SetEnvironmentVariable('GEMINI_API_KEY', 'ใส่_KEY_ของคุณที่นี่', 'User')
+```
 
-## 💡 หลังจากการ Merge
-
-1. ✅ ตรวจสอบที่ GitHub Pull Requests
-2. ✅ ตรวจสอบการแสดงผล (Rendering) ของ Markdown
-3. ✅ กด Merge pull request เพื่อรวมเข้า main
-4. ✅ ลบสาขา `translate-readme-thai` (ตัวเลือก)
-5. ✅ ประกาศให้ชุมชนไทยทราบ
+> หมายเหตุ: การตั้งค่าดังกล่าวจะเก็บคีย์ในโปรไฟล์ผู้ใช้ของ Windows เพื่อหลีกเลี่ยงการเก็บคีย์ในไฟล์โค้ด
 
 ---
 
-## 📞 Contact & Support
+## ✅ รายการไฟล์ที่เปลี่ยน/เพิ่ม
 
-สำหรับคำถามหรือข้อเสนอแนะ กรุณาติดต่อผ่าน:
-
-- **GitHub Issues**: https://github.com/nongsandyza/gemini-cli/issues
-- **GitHub Discussions**: https://github.com/google-gemini/gemini-cli/discussions
+- README.md (อัปเดตเป็นภาษาไทย)
+- README_TH.md (สำเนา README ภาษาไทย)
+- DELIVERY.md (เอกสารส่งมอบ)
 
 ---
 
-**สร้างโดย:** Copilot (AI Assistant)  
-**วันที่อัปเดตล่าสุด:** 2026-05-08  
-**เวอร์ชัน:** 1.0 - Thai Localization Edition
+## 🔁 Branch & PR
+
+- Branch: `translate-readme-thai` ← (สร้างแล้ว)
+- เป้าหมาย: Merge เข้าสู่ `main`
+
+เนื่องจากข้อจำกัดของสิทธิ์/เครื่องมือ ผมได้เตรียมทุกไฟล์และผลักไปยังสาขา `translate-readme-thai` เรียบร้อยแล้ว — คุณสามารถเปิด Pull Request ได้ที่:
+
+https://github.com/nongsandyza/gemini-cli/compare/main...translate-readme-thai?expand=1
+
+หรือให้ผมช่วยเตรียมรายละเอียดหัวข้อ PR และเนื้อหาที่จะใส่ใน body ให้ (ผมสามารถแนะนำ Title, Body, และ Checklist ให้พร้อม)
+
+---
+
+## 🧪 การตรวจสอบก่อน Merge
+
+- ตรวจสอบความถูกต้องของลิงก์ภายนอก
+- ตรวจสอบ Markdown syntax
+- ยืนยันว่าคำสั่ง CLI ยังคงทำงานได้เหมือนเดิม (ไม่แก้ไขโค้ดจริง)
+
+---
+
+หากต้องการให้ผมเปิด PR และทำการ Merge ให้เสร็จ (auto-merge) โปรดยืนยันสิทธิ์หรือมอบสิทธิ์ที่จำเป็น หรือถ้าต้องการ ผมจะสร้างข้อความ PR เตรียมไว้ให้คุณแค่กดเปิดเท่านั้น
